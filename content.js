@@ -1,20 +1,30 @@
 
 let colorClick = document.querySelectorAll('.aac-overview-shades .aac-card-shade-swatch');
+let colorCheck = '';
 if(colorClick){
     let countValue = 0;
     let colorClickLength = colorClick.length;
     setTimeout(() => {
         setInterval(() => {
             if(countValue < colorClickLength){
+
+                colorClick[countValue].click();
+
+                let colorCode = colorClick[countValue].closest('.aac-card-shade').querySelector('.aac-card-shade-name p').innerText;
+                if(colorCode != colorCheck){
+                    console.log(colorCode);
+                }else{
+                    countValue++;
+                }
+
+                // colorClick[countValue].click ? 
+                //     console.log(colorClick[countValue].closest('.aac-card-shade').querySelector('.aac-card-shade-name p'))
+                // :
+                //     ''
+                // ;
+                
     
-                colorClick[countValue].click ? 
-                    console.log(colorClick[countValue].closest('.aac-card-shade').querySelector('.aac-card-shade-name p'))
-                    // colorClick[countValue] == countValue ? console.log('Ok') : console.log('no')
-                :
-                    ''
-                ;
-    
-                countValue++;
+                
             }
         }, 500);
     }, 1000);
