@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .color-select {
+            display: flex;
+            column-gap: 24px;
+            margin-top: 30px;
+        }
+        .color-select .step {
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+        }
+        .color-select .step .aac-card-shade .aac-card-shade-name {
+            width: 200px;
+            height: 40px;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .color-code-name {
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+            align-items: center;
+        }
+        .color-code-name .color-show {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            box-shadow: 0 2px 18px rgba(0,0,0,.15);
+        }
+
+        .color-list {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            max-height: 50px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .color-list .color {
+            display: inline-block;
+        }
+        .color-list .color span {
+            display: block;
+            width: 50px;
+            height: 26px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" class="btn1">Button1</button>
+    <button type="button" class="btn2">Button2</button>
+
+
+    <div class="color-code-name">
+        <div class="aac-hex-name">#FFFFFF</div>
+        <div class="color-show" style="background: #FFFFFF;"></div>
+        <div class="aac-name-sub" id="aac-artyclick-name">White</div>
+    </div>
+
+    <div class="color-list"></div>
+
+
+    <div class="color-select">
+        <div class="step">
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #FF734C;"></span></div>
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #D5CDB4;"></span></div>
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #EEEDE4;"></span></div>
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #602A1B;"></span></div>
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #B95337;"></span></div>
+        </div>
+        <div class="step">
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #FF734C;"></span></div>
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #FFCABC;"></span></div>
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #FFF2EE;"></span></div>
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #6B2F1F;"></span></div>
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #6B79A3;"></span></div>
+        </div>
+        <div class="step">
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #FF734C;"></span></div>
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #FFBAA7;"></span></div>
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #E8EEEA;"></span></div>
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #602A1B;"></span></div>
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #B95337;"></span></div>
+        </div>
+        <div class="step">
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #FF734C;"></span></div>
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #FFC5B5;"></span></div>
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #ECE6E6;"></span></div>
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #6B2F1F;"></span></div>
+            <div class="aac-card-shade"><span class="aac-card-shade-name" style="background: #907572;"></span></div>
+        </div>
+    </div>
+
+    <script>
+        let colorListDiv = document.querySelector('.color-list');
+        const colors = [
+                    {
+                    "id": 1,
+                    "name": "Black",
+                    "code": "#000000"
+                    },
+                    {
+                    "id": 2,
+                    "code": "#1A1A1A",
+                    "name": "Rangoon Green"
+                    },
+                    {
+                    "id": 3,
+                    "code": "#303030",
+                    "name": "Thunder"
+                    },
+                    {
+                    "id": 4,
+                    "code": "#454545",
+                    "name": "Black Cow"
+                    },
+                    {
+                    "id": 5,
+                    "code": "#575757",
+                    "name": "Davy Grey"
+                    },
+                    {
+                    "id": 6,
+                    "code": "#686868",
+                    "name": "Cloudy Grey"
+                    },
+                    {
+                    "id": 7,
+                    "code": "#787878",
+                    "name": "Boulder"
+                    },
+                    {
+                    "id": 8,
+                    "code": "#858585",
+                    "name": "Gunsmoke"
+                    },
+                    {
+                    "id": 9,
+                    "code": "#919191",
+                    "name": "Grey"
+                    },
+                    {
+                    "id": 10,
+                    "code": "#9C9C9C",
+                    "name": "Star Dust"
+                    },
+                    {
+                    "id": 11,
+                    "code": "#A5A5A5",
+                    "name": "Dawn"
+                    },
+                    {
+                    "id": 12,
+                    "code": "#AFAFAF",
+                    "name": "Silver Chalice"
+                    },
+                    {
+                    "id": 13,
+                    "code": "#B8B8B8",
+                    "name": "Pink Swan"
+                    },
+                    {
+                    "id": 14,
+                    "code": "#BFBFBF",
+                    "name": "Pale Slate"
+                    },
+                    {
+                    "id": 15,
+                    "code": "#C6C6C6",
+                    "name": "Silver"
+                    }
+                ];
+
+        let colorList = '';
+        colors.forEach((color, index) => {
+            colorList += `<div class="color aac-card-shade-swatch" id="tint${index}">
+                <span class="code" style="background:${color.code}"></span>
+                <span class="name">${color.name}</span>
+                </div>`;
+        });
+        colorListDiv.insertAdjacentHTML("beforeend",colorList);
+
+        let colorClick = document.querySelectorAll('.aac-card-shade-swatch');
+        if(colorClick){
+            let countValue = 0;
+            let colorClickLength = colorClick.length;
+            setInterval(() => {
+                if(countValue < colorClickLength){
+                    colorClick[countValue].querySelector('span').click ? 
+                    document.querySelector('.aac-name-sub').innerHTML = colorClick[countValue].querySelector('.name').innerText : '';
+                    countValue++;
+                }
+            }, 500);
+        }
+    </script>
+</body>
+</html>

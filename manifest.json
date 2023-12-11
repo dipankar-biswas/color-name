@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Color Pick",
+    "version": "1.0",
+    "description": "Click Action Color Code and Name Pick.",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "logo.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+    {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+    }
+    ],
+    "icons": {
+        "128": "logo.png"
+    },
+    "permissions": [
+        "activeTab",
+        "storage"
+    ]
+}
+
+
