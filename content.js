@@ -31,7 +31,7 @@ if(colorClick){
                         }
                     }else {
                         let postData = {
-                            id: lastId+1,
+                            // id: lastId+1,
                             code: document.querySelector('#aac-hex-name').innerHTML,
                             name: document.querySelector('#aac-artyclick-name').innerHTML,
                         };
@@ -117,8 +117,6 @@ function getData(){
         getAllData = data;
         lastId = Math.max(...data.map((item) => item.id));
         console.log('Last ID:', lastId);
-        // json.map(data => {
-        // })
     })
     .catch((error) => {
         console.error('Error Get data:', error);
